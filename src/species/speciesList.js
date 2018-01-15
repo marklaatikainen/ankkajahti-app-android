@@ -1,15 +1,45 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, FlatList, Text } from 'react-native';
+import {
+    View,
+    StyleSheet,
+    FlatList,
+    Text,
+    Animated,
+    Easing,
+} from 'react-native';
 import { PropTypes } from 'prop-types';
 import SpecieItem from './specieItem';
 import DuckDetailPage from './duckDetailPage'
 
+const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
+
 export default class SpeciesList extends Component {
+    animation = new Animated.Value(610);
 
     state = {
         species: this.props.species,
         duckSelected: '',
         duckIndex: ''
+    }
+
+    componentDidMount() {
+        this.animate();
+    }
+
+    componentWillUpdate() {
+        this.animate();
+    }
+
+    animate() {
+        Animated.timing(
+            this.animation,
+            {
+                toValue: 0,
+                duration: 400,
+                delay: 50,
+                easing: Easing.quad
+            }
+        ).start();
     }
 
     openDetails = (value, index) => {
@@ -30,7 +60,8 @@ export default class SpeciesList extends Component {
                 {
                     this.state.duckSelected !== ''
                         ? (<DuckDetailPage duck={this.state.species[this.state.duckIndex]} duckSelected={this.state.duckSelected} goBack={this.goBack} />)
-                        : (<FlatList
+                        : (<AnimatedFlatList
+                            style={{ marginTop: this.animation }}
                             data={this.state.species}
                             keyExtractor={(x, i) => i}
                             renderItem={({ item }) =>
