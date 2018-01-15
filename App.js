@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import RootNavigator from './RootNavigator';
+import RootNavigator from './src/RootNavigator';
 
 const App = () => (
   <RootNavigator />

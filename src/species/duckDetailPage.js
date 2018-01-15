@@ -10,7 +10,7 @@ import {
     Dimensions
 } from 'react-native';
 import DuckDetail from './duckDetail';
-import getData from './getData'
+import getData from '../getData'
 
 export default class DuckDetailPage extends React.Component {
     animation = new Animated.Value(610);

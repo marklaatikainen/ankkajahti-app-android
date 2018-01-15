@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import SightingList from './sightingList'
-import getData from './getData';
+import getData from '../getData';
 
 export default class Sightings extends Component {
     state = {

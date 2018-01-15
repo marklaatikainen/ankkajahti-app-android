@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import t from 'tcomb-form-native';
 import Moment from 'moment';
-import getData from './getData';
+import getData from '../getData';
 
 const Form = t.form.Form;
 
@@ -61,15 +61,15 @@ const options = {
         specie: {
             error: 'Choose duck species',
             nullOption: { value: '', text: 'Choose duck specie' },
-            template: require('./template/select')
+            template: require('../template/select')
         },
         description: {
             error: 'Please enter description',
-            template: require('./template/textbox')
+            template: require('../template/textbox')
         },
         // dateSeen: {
         //     mode: 'date',
-        //     template: require('./template/datepicker'),
+        //     template: require('../template/datepicker'),
         //     maximumDate: new Date(),
         //     blurOnSubmit: true,
         //     config: {
@@ -82,7 +82,7 @@ const options = {
         // },
         count: {
             error: 'How many ducks were there?',
-            template: require('./template/textbox')
+            template: require('../template/textbox')
         },
     },
     auto: 'placeholders',

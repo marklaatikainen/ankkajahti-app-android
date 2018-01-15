@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 import { PropTypes } from 'prop-types';
 import SightingItem from './SightingItem';
-import FilterComponent from './filterComponent';
+import FilterComponent from '../filterComponent';
 import _ from 'lodash';
 
 export default class SightingList extends Component {

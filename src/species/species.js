@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import SpeciesList from './speciesList';
-import getData from './getData';
+import getData from '../getData';
 
 export default class Species extends Component {
     state = {

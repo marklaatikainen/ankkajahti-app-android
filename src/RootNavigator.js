@@ -2,9 +2,9 @@ import * as React from 'react';
 import { View, Text, StyleSheet, StatusBar, Dimensions } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Species from './species';
-import Sightings from './sightings';
-import AddSighting from './addSighting';
+import Species from './species/species';
+import Sightings from './ducks/sightings';
+import AddSighting from './ducks/addSighting';
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view';
 
 const MyStatusBar = ({ backgroundColor, ...props }) => (
